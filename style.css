@@ -22,10 +22,9 @@ body{
     background: #1d1f20;
 }
 nav{
-    padding-top: 6%;
-    background: #1d1f20;
-    height: 64px;
-    width: 100%;
+    display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 label.logo{
     display: inline-block;
@@ -49,10 +48,7 @@ div.text{
     padding-bottom: 15px;
 }
 nav ul{
-    width: 100%;
-    float: left;
-    display: block;
-    padding-bottom: 30px;
+    display: flex;
 }
 nav ul li{
     display: inline-block;
