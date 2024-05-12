@@ -1,4 +1,4 @@
-/* Rojo: #E53935 Morado: 52263e  Negro: 0d0d14 Azul: #1976D2 Gris: #c9c9c9*/
+/* Rojo: #E53935 Morado: 52263e  Negro: 1d1f20 Azul: #1976D2 Gris: #c9c9c9  Cian: #00ACC1*/
 @font-face {
     font-family: "Consolas";
     src: url(main/fonts/consola.ttf);
@@ -27,7 +27,7 @@ label.logo{
     color: #c9c9c9;
     font-weight: bold;
 }
-div.title{
+.title{
     width: 100%;
     float: left;
     font-size: larger;
@@ -35,13 +35,16 @@ div.title{
     color: #c9c9c9;
     font-weight: bold;
 }
-div.text{
+.text{
     font-size: medium;
     color: #c9c9c9;
     font-weight: normal;
     padding-top: 15px;
     padding-bottom: 15px;
 }
+
+/* nav y footer para pantallas normales */
+
 nav{
     padding-top: 6%;
     background: #1d1f20;
@@ -74,9 +77,6 @@ a.active,a:hover{
     transition: .5s;
 
 }
-img{
-    float: block;
-}
 footer{
     padding-top: 6%;
     background: #1d1f20;
@@ -101,6 +101,50 @@ footer ul li a{
     font-size: medium;
     padding: 7px 13px;
     border-radius: 3px;
+}
+
+/* Ocultar elementos de navegación y pie de página en pantallas pequeñas */
+
+@media screen and (max-width: 700px) {
+    nav ul, footer ul {
+        display: none;
+    }
+    footer ul.iconos {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    div.menu {
+        display: none;
+    }
+    footer ul.iconos {
+        display: none;
+    }
+
+}
+
+/* nav y footer para pantallas pequeñas */
+.menu{
+    font-size: medium;
+    color: #E53935;
+    font-weight: normal;
+}
+.dropdown-menu {
+    display: none; /* Asegúrate de que el menú esté oculto inicialmente */
+    position: relative;
+    margin-top: 30px;
+    background-color: #1d1f20;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+/* HR STYLE */
+
+img{
+    float: block;
 }
 .resistencia-container {
     display: flex;
