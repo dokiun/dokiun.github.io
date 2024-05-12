@@ -102,3 +102,23 @@ footer ul li a{
     padding: 7px 13px;
     border-radius: 3px;
 }
+.resistencia-container {
+    display: flex;
+    align-items: center;
+}
+hr.resistencia {
+    border: none;
+    height: 50px;
+    position: relative;
+    background-image: url(img/resist.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    flex-grow: 3;
+}
+.cable {
+    flex-grow: 6;
+    width: fit-content;
+    height: 2.5px;
+    background-color: #c9c9c9;
+}
