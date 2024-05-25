@@ -147,6 +147,10 @@ footer ul li a{
         align-content: center;
         flex-wrap: nowrap;
     }
+    body {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }
 
 @media screen and (min-width: 700px) {
