@@ -60,6 +60,15 @@ label.logo{
     color: #c9c9c9;
     font-weight: bold;
     text-decoration-line: underline;
+    text-underline-offset: 5px;
+}
+.pretitle{
+    width: 100%;
+    float: left;
+    font-size: larger;
+    padding-bottom: 30px;
+    color: #c9c9c9;
+    font-weight: bold;
 }
 .text{
     font-size: medium;
@@ -274,7 +283,7 @@ hr.resistencia {
     border: none;
     height: 50px;
     position: relative;
-    background-image: url(img/resist.svg);
+    background-image: url(img/svg/resist.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
