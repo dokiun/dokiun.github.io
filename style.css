@@ -77,6 +77,12 @@ label.logo{
     padding-top: 15px;
     padding-bottom: 15px;
 }
+pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0;
+}
 
 /* nav y footer para pantallas normales */
 
