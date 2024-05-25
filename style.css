@@ -64,9 +64,7 @@ label.logo{
 }
 .pretitle{
     width: 100%;
-    float: left;
     font-size: larger;
-    padding-bottom: 30px;
     color: #c9c9c9;
     font-weight: bold;
 }
