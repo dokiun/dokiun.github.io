@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img\svg\motor.ico">
 </head>
-<body>
+<body> <!-- Cuerpo de la página -->
 
-<nav>
+<nav> <!-- Barra de navegación página -->
     <label class="logo">Mateo Vargas</label>
     <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -18,7 +18,33 @@
         <li><a href="actualizar.html">Actualizar</a></li>
     </ul>
 </nav>
-<nav class="accordion-container">
+<nav class="accordion-container"> <!-- Barra de navegación móvil -->
+    <label class="logo">Mateo Vargas</label>
+    <div class="main-item">
+    Menú
+      <svg id="boton-menu-desp"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 4l-8 4l8 4l8 -4l-8 -4"></path>
+        <path d="M4 12l8 4l8 -4"></path>
+        <path d="M4 16l8 4l8 -4"></path>
+      </svg>
+    </div>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a class="active" href="proyectos.html">Proyectos</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="actualizar.html">Actualizar</a></li>
+    </ul>
   <label class="logo">Mateo Vargas</label>
   <div class="main-item">
   Menú
@@ -49,8 +75,8 @@
 <script src="script\menu-desp.js"></script>
 
 <div class="faq-container">
-    <details>
-      <summary>
+    <details> <!-- Análisis de datos CyT -->
+      <summary> <!-- Título del proyecto -->
         <span class="faq-title">
             Análisis de datos CyT
         </span>
@@ -60,13 +86,17 @@
           <path d="M9 6l6 6l-6 6"></path>
         </svg>
       </summary>
-      <div class="faq-content">
-        Un pequeño proyecto de análisis de datos, incluye mapas de calor, gráficos de barras y de dispersión.
+      <div class="faq-content"> <!-- Contenido del proyecto -->
+        <p>Un pequeño proyecto de análisis de datos, incluye mapas de calor, gráficos de barras y de dispersión. Es la razón de origen
+          de este sitio web.</p>
+        </p>
+        <p>&nbsp;</p>
+        <p><a href="#" target="_blank" style="color: #76D219">Enlace -></a></p>
       </div>
     </details>
-    <details>
+    <details> <!-- Transformador -->
       <summary>
-        <span class="faq-title">
+        <span class="faq-title"> <!-- Título del proyecto -->
             Transformador eléctrico - IME
         </span>
         <svg xmlns="http://www.w3.org/2000/svg" class="expand-icon" width="24" height="24" viewBox="0 0 24 24"
@@ -75,30 +105,16 @@
           <path d="M9 6l6 6l-6 6"></path>
         </svg>
       </summary>
-      <div class="faq-content">
-        Proyecto de diseño de un transformador eléctrico (requisito para aprobar la materia de Instalaciones y Máquinas Eléctricas [IME]), 
-        incluye cálculos, modelación CAD, núcleo y bobinado.
+      <div class="faq-content"> <!-- Contenido del proyecto -->
+        <p>Proyecto de diseño de un transformador eléctrico (requisito para aprobar la materia de Instalaciones y Máquinas Eléctricas [IME]), 
+        incluye cálculos, modelación CAD, núcleo y bobinado.</p>
+        <p>&nbsp;</p>
+        <p><a href="#" target="_blank" style="color: #76D219">Enlace -></a></p>
       </div>
     </details>
-    <details>
+    <details> <!-- Blackjack -->
       <summary>
-        <span class="faq-title">
-            Aislante térmico
-        </span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="expand-icon" width="24" height="24" viewBox="0 0 24 24"
-          stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M9 6l6 6l-6 6"></path>
-        </svg>
-      </summary>
-      <div class="faq-content">
-        Pequeño proyecto de diseño de un aislante térmico para bajar las temperaturas del teléfono que 
-        reposa en un soporte en el interior de un vehículo.
-        </div>
-    </details>
-    <details>
-      <summary>
-        <span class="faq-title">
+        <span class="faq-title"> <!-- Título del proyecto -->
             Blackjack - PDC
         </span>
         <svg xmlns="http://www.w3.org/2000/svg" class="expand-icon" width="24" height="24" viewBox="0 0 24 24"
@@ -107,15 +123,17 @@
           <path d="M9 6l6 6l-6 6"></path>
         </svg>
       </summary>
-      <div class="faq-content">
-        Programa de blackjack en python, incluye interfaz gráfica y juego contra la máquina. Realizado en la materia de Programación de Computadores [PDC].
-        realizado en su totalidad por mi.
+      <div class="faq-content"> <!-- Contenido del proyecto -->
+        <p>Programa de blackjack en python, incluye interfaz gráfica y juego contra la máquina. Realizado en la materia de Programación de Computadores [PDC].
+        realizado en su totalidad por mi.</p>
+        <p>&nbsp;</p>
+        <p><a href="#" target="_blank" style="color: #76D219">Enlace -></a></p>
       </div>
     </details>
-    <details>
+    <details> <!-- Repositorio CAD -->
       <summary>
-        <span class="faq-title">
-            Dibujo de Máquinas
+        <span class="faq-title"> <!-- Título del proyecto -->
+            Repositorio CAD
         </span>
         <svg xmlns="http://www.w3.org/2000/svg" class="expand-icon" width="24" height="24" viewBox="0 0 24 24"
           stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -123,13 +141,15 @@
           <path d="M9 6l6 6l-6 6"></path>
         </svg>
       </summary>
-      <div class="faq-content">
-        Un pequeño repertorio de la materia de Dibujo de Máquinas, incluye dibujos de piezas, ensambles y despieces.
+      <div class="faq-content"> <!-- Contenido del proyecto -->
+        <p>Un pequeño repertorio de la materia de Dibujo de Máquinas, incluye dibujos de piezas, ensambles y despieces.</p>
+        <p>&nbsp;</p>
+        <p><a href="#" target="_blank" style="color: #76D219">Enlace -></a></p>
       </div>
     </details>
-    <details>
+    <details> <!-- Página WEB -->
         <summary>
-          <span class="faq-title">
+          <span class="faq-title"> <!-- Título del proyecto -->
               Página WEB
           </span>
           <svg xmlns="http://www.w3.org/2000/svg" class="expand-icon" width="24" height="24" viewBox="0 0 24 24"
@@ -138,16 +158,19 @@
             <path d="M9 6l6 6l-6 6"></path>
           </svg>
         </summary>
-        <div class="faq-content">
-          Esta página web en su totalidad está desarrollada por mi, inluye HTML y CSS, además de un poco de JavaScript.
+        <div class="faq-content"> <!-- Contenido del proyecto -->
+          <p>Ésta página web en su totalidad está desarrollada por mi, inluye HTML y CSS, además de un poco de JavaScript.</p>
+          <p>&nbsp;</p>
+          <p><a href="index.html" style="color: #76D219">Enlace -></a></p>
         </div>
-      </details>
-    <p>&nbsp;</p>
-  </div>
-  <script src="script\acordeon.js"></script>
+    </details>
+</div>
+<script src="script\acordeon.js"></script>
+
+<p>&nbsp;</p>
 
 </body>
-<footer>
+<footer> <!-- Pie de página -->
     <label class="logo">&copy; 2024 Mateo Vargas</label>
     <ul>
         <li><a href="https://www.linkedin.com/in/mateo-vargas-a96463305/" target="_blank">Linkedin</a></li>

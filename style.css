@@ -238,6 +238,7 @@ footer ul li a{
     margin: 0px;
     padding-left: 14px;
     opacity: 0;
+    display: none;
     visibility: hidden;
     transition: all ease-in-out 0.2s;
   }
