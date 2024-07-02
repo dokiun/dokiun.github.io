@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img\svg\motor.ico">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
+         <!-- Script de Python -->
 </head>
 <body> 
 
@@ -49,26 +49,14 @@
     <script src="script\menu-desp.js"></script>
 </nav>
 
-<!-- Barra de navegación móvil -->
-
-<div> <!-- Novedades -->
-    <div class="title">Novedades:</div>
-    <div class="text">
-        <p>- Agregada página de Blog (próximamente) <a href="blog.html" style="color: #76D219">aquí</a></p>
-    </div>
-</div>
-
-<p>&nbsp;</p>
-<div class="resistencia-container"> <!-- Separador de resistencia -->
-    <div class="cable"></div>
-    <hr class="resistencia">
-    <div class="cable"></div>
-</div>
-<p>&nbsp;</p>
 
 <div> <!-- Sobre mi -->
     <div class="title">Sobre mi:</div>
-    <div class="text">Estudiante de ingenier&iacute;a mec&aacute;nica con inter&eacute;s en el dise&ntilde;o, modelado y fabricaci&oacute;n de elementos de m&aacute;quinas.</div>
+    <div class="text">
+        <p>Estudiante de ingenier&iacute;a mec&aacute;nica con inter&eacute;s en el dise&ntilde;o, modelado y fabricaci&oacute;n de elementos de m&aacute;quinas.</p>
+        <p>&nbsp;</p>
+        <p>Para conocer los proyectos en los que estoy trabajando y he trabajado visita la página "Proyectos" ó has <a href="proyectos.html" style="color: #00ACC1">click aquí</a>.</p>
+    </div>
 </div>
 
 <p>&nbsp;</p>
@@ -81,16 +69,33 @@
 
 <div> <!-- Formación -->
     <div class="title"><p>Formaci&oacute;n:</p></div>
-    <div class="text">
-        <p>- Técnico Mecatrónico - Colegio OEA 2019</p>
-        <p>&nbsp;</p>
-        <p>- Ingenier&iacute;a Mec&aacute;nica - Universidad Nacional de Colombia</p>
-        <p>&nbsp;</p>
-        <p>- Autocad 2D - SENA 2022</p>
-        <p>&nbsp;</p>
-        <p>- Elementos de M&aacute;quinas - SENA 2023</p>
-        <p>&nbsp;</p>
-        <p>- Introducci&oacute;n a Sistemas de Automatizaci&oacute;n - SENA 2023</p>
+    <p>&nbsp;</p>
+    <div class="cards">
+        <div class="card">
+            <img src="img\svg\oea_logo.svg" class="card-img" alt="Logo de la Universidad Nacional de Colombia" width="100%" height="100%">
+            <div class="card-body">
+                <h1 class="card-title">Técnico Mecatrónico</h1>
+                <p class="card-sub">Colegio OEA</p>
+                <p class="card-sub">2018-2019</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img\svg\unal_logo.svg" class="card-img" alt="Logo de la Universidad Nacional de Colombia" width="100%" height="100%">
+            <div class="card-body">
+                <h1 class="card-title">Ingenier&iacute;a Mec&aacute;nica</h1>
+                <p class="card-sub">Universidad Nacional de Colombia</p>
+                <p class="card-sub">2020-Actualidad</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img\svg\sena_logo.svg" class="card-img" alt="Logo de la Universidad Nacional de Colombia" width="100%" height="100%">
+            <div class="card-body">
+                <h1 class="card-title">SENA</h1>
+                <p class="card-sub">- Autocad 2D</p>
+                <p class="card-sub">- Elementos de máquinas</p>
+                <p class="card-sub">- Intrd. a Sistemas de Automatización</p>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -104,7 +109,7 @@
 
 <div> <!-- Imagen -->
     <img id="myImage" src="img\blog\20221010_180327.jpg" alt="Lain Iwakura on wired" width="100%" height="100%">
-    <pre id="allMetaDataSpan"></pre>
+    <py-script src="script\meta.py"></py-script>
 
     <div class="text">
         <a href="https://maps.app.goo.gl/gbc1xEZzsX6yznfx9" target="_blank" style="color: #00ACC1">Click aquí</a> para conocer las coordenadas de esta foto.
@@ -130,27 +135,12 @@
     <div class="text">
         <a href="about.html" style="color: #00ACC1">Click aquí</a> para conocer un poco más sobre mi.
     </div>
-</div>
-
-<p>&nbsp;</p>
-<div class="resistencia-container"> <!-- Separador de resistencia -->
-    <div class="cable"></div>
-    <hr class="resistencia">
-    <div class="cable"></div>
-</div>
-<p>&nbsp;</p>
-
-<div> <!-- Debug -->
-    <div class="title">Debug: 2024-05-27</div>
     <div class="text">
-        <p>- Arreglado el problema de la fuente Consolas.ttf</p>
-        <p>- Agregago el aviso Sitio en construcción.</p>
-        <p>- Agregado Novedades.</p>
-        <p>- Arreglado el problema de la barra de navegación.</p>
-        <p>- Actualización de proyectos.</p>
-        <p>- Formateo de código más legible.</p>
+        <a href="blog.html" style="color: #00ACC1">Click aquí</a> para el Debug.
     </div>
 </div>
+
+<p>&nbsp;</p>
 
 </body>
 <footer> <!-- Pie de página -->
