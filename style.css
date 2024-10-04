@@ -129,7 +129,6 @@ a.active,a:hover{
 }
 footer{
     padding: 20px;
-    margin-top: 20px;
     margin-bottom: 20px;
     background-image: url(img/misc/drip_u.gif);
     box-shadow: 0 0 15px var(--background);
@@ -163,7 +162,6 @@ footer ul li a{
     nav.accordion-container {
         display: flex;
         justify-content: space-between;
-        align-content: center;
         flex-wrap: wrap;
     }
     footer ul.iconos {
@@ -191,15 +189,14 @@ footer ul li a{
 /* nav y footer para pantallas pequeñas */
 
 .accordion-container {
-    padding-top: 20%;
-    background: #1d1f20;
+    background: var(--background);
+    background-image: url(img/misc/drip_u.gif);
     width: 100%;
     height: 64px;
   }
   
   .main-item {
     border-radius: 8px;
-    padding-right: 12px;
     display: flex;
     flex-wrap: wrap;
     float: right;
@@ -214,47 +211,46 @@ footer ul li a{
   }
   
   .main-item:hover {
-    background-color: var(--primary-red);
-    color: var(--primary-orange);
+    background-color: var(--transparent);
+    color: var(--primary-pink);
   }
   
   .main-item svg {
-    color: var(--primary-red);
+    color: var(--primary-pink);
     transition: all ease-in-out 0.25s;
     float: right;
   }
   
   .main-item:hover svg {
-    color: var(--primary-orange);
+    color: var(--primary-pink);
   }
   
   .main-item--open {
-    color: var(--primary-orange);
+    color: var(--primary-pink);
     border-radius: 8px 8px 0px 0px;
-    background-color: var(--background-hover);
+    background-color: var(--background-hover-t);
+    background-image: url(img/misc/drip_u.gif);
     transition: all 200ms;
   }
   
   .main-item--open:hover {
-    color: var(--primary-orange);
+    color: var(--primary-pink);
     border-radius: 8px 8px 0px 0px;
-    background-color: var(--background-hover);
+    background-color: var(--background);
   }
   
   .main-item--open svg {
-    color: var(--primary-orange);
+    color: var(--primary-pink);
   }
   
   .main-item--open:hover svg {
-    color: var(--primary-orange)	;
+    color: var(--primary-pink)	;
   }
   
   .accordion-container > ul {
     max-height: 200px;
-    background-color: var(--background-hover);
+    background-image: url(img/misc/drip_u.gif);
     list-style-type: none;
-    margin: 0px;
-    padding-left: 14px;
     opacity: 0;
     display: none;
     visibility: hidden;
