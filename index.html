@@ -8,10 +8,6 @@
     <link rel="icon" href="img\svg\motor.ico">
 </head>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/STLLoader.js"></script>
-
-
 <body> 
 
 <nav> <!-- Barra de navegación página -->
@@ -51,19 +47,18 @@
     <script src="script\menu-desp.js"></script>
 </nav>
 
-
-
 <div class="caja" id="three-container">
     <div class="title">Modelo 3D</div>
     <div class="text">Modelo 3D interactivo de un ensamble mecánico.</div>
-    <script>
+    <script type="module">
+        import * as THREE from 'https://cdn.skypack.dev/three@0.152.2';
+        import { STLLoader } from 'https://cdn.skypack.dev/three@0.152.2/examples/jsm/loaders/STLLoader.js';
+      
         const container = document.getElementById('three-container');
       
-        // Escena, cámara y renderizador
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-      
         renderer.setSize(window.innerWidth, window.innerHeight);
         container.appendChild(renderer.domElement);
       
@@ -75,20 +70,19 @@
         directionalLight.position.set(1, 1, 1).normalize();
         scene.add(directionalLight);
       
-        // Loader STL
-        const loader = new THREE.STLLoader();
+        // STL Loader
+        const loader = new STLLoader();
         let mesh;
       
-        loader.load('models\Ensamble.stl', function (geometry) {
+        loader.load('models/Ensamble.stl', function (geometry) {
           const material = new THREE.MeshStandardMaterial({ color: 0x0077ff, metalness: 0.3, roughness: 0.6 });
           mesh = new THREE.Mesh(geometry, material);
           geometry.computeBoundingBox();
       
-          // Centrar y escalar el modelo
           const center = new THREE.Vector3();
           geometry.boundingBox.getCenter(center);
           mesh.position.sub(center);
-          mesh.scale.set(0.01, 0.01, 0.01); // Ajusta el tamaño si es muy grande
+          mesh.scale.set(0.01, 0.01, 0.01);
           scene.add(mesh);
         });
       
@@ -96,12 +90,10 @@
       
         // Interacción con mouse
         let mouseX = 0;
-      
         document.addEventListener('mousemove', (event) => {
           mouseX = (event.clientX / window.innerWidth) * 2 - 1;
         });
       
-        // Animación
         function animate() {
           requestAnimationFrame(animate);
           if (mesh) {
@@ -112,13 +104,13 @@
       
         animate();
       
-        // Responsivo
         window.addEventListener('resize', () => {
           camera.aspect = window.innerWidth / window.innerHeight;
           camera.updateProjectionMatrix();
           renderer.setSize(window.innerWidth, window.innerHeight);
         });
-    </script>
+      </script>
+      
 </div>
 
 
