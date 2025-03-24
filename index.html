@@ -46,6 +46,76 @@
     <script src="script\menu-desp.js"></script>
 </nav>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/STLLoader.js"></script>
+
+<div id="three-container" style="width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; z-index: 1;"></div>
+
+<script>
+    const container = document.getElementById('three-container');
+  
+    // Escena, cámara y renderizador
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    container.appendChild(renderer.domElement);
+  
+    // Iluminación
+    const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
+    scene.add(light);
+  
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    directionalLight.position.set(1, 1, 1).normalize();
+    scene.add(directionalLight);
+  
+    // Loader STL
+    const loader = new THREE.STLLoader();
+    let mesh;
+  
+    loader.load('models/Ensamble.stl', function (geometry) {
+      const material = new THREE.MeshStandardMaterial({ color: 0x0077ff, metalness: 0.3, roughness: 0.6 });
+      mesh = new THREE.Mesh(geometry, material);
+      geometry.computeBoundingBox();
+  
+      // Centrar y escalar el modelo
+      const center = new THREE.Vector3();
+      geometry.boundingBox.getCenter(center);
+      mesh.position.sub(center);
+      mesh.scale.set(0.01, 0.01, 0.01); // Ajusta el tamaño si es muy grande
+      scene.add(mesh);
+    });
+  
+    camera.position.z = 2;
+  
+    // Interacción con mouse
+    let mouseX = 0;
+  
+    document.addEventListener('mousemove', (event) => {
+      mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+    });
+  
+    // Animación
+    function animate() {
+      requestAnimationFrame(animate);
+      if (mesh) {
+        mesh.rotation.y += (mouseX * 0.2 - mesh.rotation.y) * 0.1;
+      }
+      renderer.render(scene, camera);
+    }
+  
+    animate();
+  
+    // Responsivo
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+</script>
+  
+  
 
 <div class="caja"> <!-- Sobre mi -->
     <div class="title">Sobre mi:</div>
@@ -141,7 +211,7 @@
 
 </body>
 <footer> <!-- Pie de página -->
-    <label class="logo">&copy; 2024 Mateo Vargas</label>
+    <label class="logo">&copy; 2025 Mateo Vargas</label>
     <ul>
         <li><a href="https://www.linkedin.com/in/julian-mateo-vargas-riveros/" target="_blank">Linkedin</a></li>
         <li><a href="https://github.com/dokiun" target="_blank">GitHub</a></li>
