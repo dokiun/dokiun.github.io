@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,74 +8,68 @@
     <link rel="stylesheet" href="/style.css" />
     <link rel="icon" href="/img/svg/motor.ico" />
 </head>
-<body> 
 
-<nav> <!-- Barra de navegación página -->
-    <label class="logo"><a class="home" href="#/">Mateo Vargas</a></label>
-    <ul>
-        <li><a class="active" href="#/">Inicio</a></li>
-        <li><a href="#/proyectos">Proyectos</a></li>
-        <li><a href="#/blog">Blog</a></li>
-    </ul>
-</nav>
-<nav class="accordion-container"> <!-- Barra de navegación móvil -->
-    <label class="logo"><a class="home" href="#/">Mateo Vargas</a></label>
-    <div class="main-item">
-    Menú
-      <svg id="boton-menu-desp"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        stroke-width="2"
-        stroke="currentColor"
-        fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
+<body>
+
+    <nav>
+        <!-- Barra de navegación página -->
+        <label class="logo"><a class="home" href="#/">Mateo Vargas</a></label>
+        <ul>
+            <li><a href="#/">Inicio</a></li>
+            <li><a href="#/proyectos">Proyectos</a></li>
+            <li><a href="#/blog">Blog</a></li>
+        </ul>
+    </nav>
+    <nav class="accordion-container">
+        <!-- Barra de navegación móvil -->
+        <label class="logo"><a class="home" href="#/">Mateo Vargas</a></label>
+        <div class="main-item">
+            Menú
+            <svg id="boton-menu-desp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
         <path d="M12 4l-8 4l8 4l8 -4l-8 -4"></path>
         <path d="M4 12l8 4l8 -4"></path>
         <path d="M4 16l8 4l8 -4"></path>
       </svg>
-    </div>
-    <ul>
-        <li><a class="active" href="index.html">Inicio</a></li>
-        <li><a href="proyectos.html">Proyectos</a></li>
-        <li><a href="blog.html">Blog</a></li>
-    </ul>
-    <script src="script\menu-desp.js"></script>
-</nav>
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+        <script src="/script/menu-desp.js"></script>
+    </nav>
 
-<div id="app"></div>
+    <div id="app"></div>
 
-<footer> <!-- Pie de página -->
-    <label class="logo">&copy; 2025 Mateo Vargas</label>
-    <ul>
-        <li><a href="https://www.linkedin.com/in/julian-mateo-vargas-riveros/" target="_blank">Linkedin</a></li>
-        <li><a href="https://github.com/dokiun" target="_blank">GitHub</a></li>
-        <li><a href="https://www.instagram.com/nomateovargas/" target="_blank">Instagram</a></li>        
-    </ul>
-    <ul class="iconos">
-        <li>
-            <a href="https://www.linkedin.com/in/julian-mateo-vargas-riveros/" target="_blank">
-                <img src="img\svg\linkedin.svg" alt="Logo de LinkedIn" width="20px" height="20px">
-            </a>
-        </li>
-        <li>
-            <a href="https://github.com/dokiun" target="_blank">
-                <img src="img\svg\github.svg" alt="Logo de GitHub" width="20px" height="20px">
-            </a>
-        </li>
-        <li>
-            <a href="https://www.instagram.com/nomateovargas/" target="_blank">
-                <img src="img\svg\instagram.svg" alt="Logo de Instagram" width="20px" height="20px">
-            </a>
-        </li>        
-    </ul>
-</footer>
+    <footer>
+        <!-- Pie de página -->
+        <label class="logo">&copy; 2025 Mateo Vargas</label>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/julian-mateo-vargas-riveros/" target="_blank">Linkedin</a></li>
+            <li><a href="https://github.com/dokiun" target="_blank">GitHub</a></li>
+            <li><a href="https://www.instagram.com/nomateovargas/" target="_blank">Instagram</a></li>
+        </ul>
+        <ul class="iconos">
+            <li>
+                <a href="https://www.linkedin.com/in/julian-mateo-vargas-riveros/" target="_blank">
+                    <img src="img\svg\linkedin.svg" alt="Logo de LinkedIn" width="20px" height="20px">
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/dokiun" target="_blank">
+                    <img src="img\svg\github.svg" alt="Logo de GitHub" width="20px" height="20px">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/nomateovargas/" target="_blank">
+                    <img src="img\svg\instagram.svg" alt="Logo de Instagram" width="20px" height="20px">
+                </a>
+            </li>
+        </ul>
+    </footer>
 
-<script type="module" src="/script/main.js"></script>
+    <script type="module" src="/script/main.js"></script>
 
 </body>
 
