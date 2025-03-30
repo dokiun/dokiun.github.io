@@ -10,7 +10,7 @@
 <body> 
 
 <nav> <!-- Barra de navegación página -->
-    <label class="logo">Mateo Vargas</label>
+    <label class="logo"><a class="home" href="index.html">Mateo Vargas</a></label>
     <ul>
         <li><a class="active" href="index.html">Inicio</a></li>
         <li><a href="proyectos.html">Proyectos</a></li>
@@ -18,7 +18,7 @@
     </ul>
 </nav>
 <nav class="accordion-container"> <!-- Barra de navegación móvil -->
-    <label class="logo">Mateo Vargas</label>
+    <label class="logo"><a class="home" href="index.html">Mateo Vargas</a></label>
     <div class="main-item">
     Menú
       <svg id="boton-menu-desp"
@@ -46,72 +46,20 @@
     <script src="script\menu-desp.js"></script>
 </nav>
 
-<div class="caja" id="three-container">
-    <div class="title">Modelo 3D</div>
-    <div class="text">Modelo 3D interactivo de un ensamble mecánico.</div>
-    <script type="module">
-        import * as THREE from 'https://cdn.skypack.dev/three@0.152.2';
-        import { STLLoader } from 'https://cdn.skypack.dev/three@0.152.2/examples/jsm/loaders/STLLoader.js';
-      
-        const container = document.getElementById('three-container');
-      
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        container.appendChild(renderer.domElement);
-      
-        // Iluminación
-        const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
-        scene.add(light);
-      
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-        directionalLight.position.set(1, 1, 1).normalize();
-        scene.add(directionalLight);
-      
-        // STL Loader
-        const loader = new STLLoader();
-        let mesh;
-      
-        loader.load('models/Ensamble.stl', function (geometry) {
-          const material = new THREE.MeshStandardMaterial({ color: 0x0077ff, metalness: 0.3, roughness: 0.6 });
-          mesh = new THREE.Mesh(geometry, material);
-          geometry.computeBoundingBox();
-      
-          const center = new THREE.Vector3();
-          geometry.boundingBox.getCenter(center);
-          mesh.position.sub(center);
-          mesh.scale.set(0.01, 0.01, 0.01);
-          scene.add(mesh);
-        });
-      
-        camera.position.z = 2;
-      
-        // Interacción con mouse
-        let mouseX = 0;
-        document.addEventListener('mousemove', (event) => {
-          mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-        });
-      
-        function animate() {
-          requestAnimationFrame(animate);
-          if (mesh) {
-            mesh.rotation.y += (mouseX * 0.2 - mesh.rotation.y) * 0.1;
-          }
-          renderer.render(scene, camera);
-        }
-      
-        animate();
-      
-        window.addEventListener('resize', () => {
-          camera.aspect = window.innerWidth / window.innerHeight;
-          camera.updateProjectionMatrix();
-          renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-      </script>
-      
+<div class="caja">
+    <div class="title"><p>Pineda 2000:</p></div>
+    <div id="viewer3d" style="width: 100%; height: 500px;">
+        <script type="module" src="/script/main.js"></script>
+    </div>
 </div>
 
+<p>&nbsp;</p>
+<div class="resistencia-container"> <!-- Separador de resistencia -->
+    <div class="cable"></div>
+    <hr class="resistencia">
+    <div class="cable"></div>
+</div>
+<p>&nbsp;</p>
 
 <div class="caja"> <!-- Sobre mi -->
     <div class="title">Sobre mi:</div>
@@ -191,7 +139,6 @@
     <div class="text">
         <p>- Aprendiendo desarrollo web básico.</p>
         <p>- Aprendiendo análisis de datos.</p>
-        <p>- Aprendiendo SolidWorks.</p>
         <p>- Aprendiendo Matlab.</p>
         <p>- Aprendiendo Python.</p>
     </div>

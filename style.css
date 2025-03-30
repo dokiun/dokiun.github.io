@@ -2,7 +2,6 @@
 :root {
     --white: #c9c9c9;
     --background: #1d1f20;
-    --background: #1d1f2059;
     --background-hover: #565758;
     --background-hover-t: #56575859;
     --primary-pink: #d2738a;
@@ -44,17 +43,22 @@ body{
     letter-spacing: 2px;
     margin-top: 4px;
     margin-bottom: 4px;
-    background-image: url(img/misc/bg_80.gif);
+    background-image: url(img/misc/bg205.gif);
     /*background: #1d1f20; */
     color: #1d1f20;
 }
+#viewer3d {
+    width: 100%;
+    height: 550px;
+  }
+  
 div.caja{
     padding: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background-image: url(img/misc/drip_u.gif);
-    background-color: var(--background);
-    box-shadow: 0 0 15px var(--background);
+    /* background-image: url(img/misc/bg205.gif); */
+    background-color: var(--transparent);
+    box-shadow: 0 0 15px var(--transparent);
 }
 a.link{
     color: var(--primary-pink);
@@ -96,8 +100,8 @@ nav{
     padding: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background-image: url(img/misc/drip_u.gif);
-    box-shadow: 0 0 15px var(--background);
+    /*background-image: url(img/misc/drip_u.gif); */
+    box-shadow: 0 0 15px var(--transparent);
     /*padding-top: 6%; */
     height: 64px;
     display: flex;
@@ -127,11 +131,17 @@ a.active,a:hover{
     transition: .5s;
 
 }
+a.home{
+    color: var(--white);
+    text-underline-offset: 3px;
+    transition: .5s;
+
+}
 footer{
     padding: 20px;
     margin-bottom: 20px;
-    background-image: url(img/misc/drip_u.gif);
-    box-shadow: 0 0 15px var(--background);
+    /*background-image: url(img/misc/drip_u.gif); */
+    box-shadow: 0 0 15px var(--transparent);
     display: flex;
     align-items: center;
     justify-content: space-between;
