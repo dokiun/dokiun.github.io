@@ -3,3 +3,10 @@ import { router } from './router.js';
 
 window.addEventListener('hashchange', router);
 window.addEventListener('load', router);
+
+// main.js
+import { initMenu } from './menu.js';
+
+window.addEventListener('DOMContentLoaded', () => {
+    initMenu(); // esto activa el menú hamburguesa
+});

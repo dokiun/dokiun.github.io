@@ -1,11 +1,10 @@
-const mainItems = document.querySelectorAll(
-    '.main-item'
-);
+export function setupMenuToggle() {
+    const icon = document.querySelector('.icon');
+    const menu = document.querySelector('.nav ul');
 
-mainItems.forEach((mainItem) => {
-    mainItem.addEventListener('click', () => {
-        mainItem.classList.toggle(
-            'main-item--open'
-        );
-    })
-});
+    if (icon && menu) {
+        icon.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    }
+}
