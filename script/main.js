@@ -5,7 +5,7 @@ window.addEventListener('hashchange', router);
 window.addEventListener('load', router);
 
 // main.js
-import { initMenu } from './menu.js';
+import { initMenu } from '../public/script/menu.js';
 
 window.addEventListener('DOMContentLoaded', () => {
     initMenu(); // esto activa el menú hamburguesa
