@@ -199,8 +199,8 @@ footer ul li a{
 /* nav y footer para pantallas pequeñas */
 
 .accordion-container {
-    background: var(--background);
-    background-image: url(img/misc/drip_u.gif);
+    background: var(--transparent);
+    /*background-image: url(img/misc/drip_u.gif); */
     width: 100%;
     height: 64px;
   }
