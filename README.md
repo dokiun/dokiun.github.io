@@ -1,6 +1,6 @@
 # 👋 Hola, soy Mateop
 
-Soy estudiante de **ingeniería mecánica**. Aquí comparto proyectos, notebooks y demás que cruzan la mecánica con el software y la programación.
+Soy estudiante de **ingeniería mecánica**. Aquí comparto proyectos, notebooks y demás cosas que cruzan la mecánica con el software y la programación.
 
 ---
 
