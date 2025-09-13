@@ -3,7 +3,7 @@
     --background: #1d1f20;
     --background-hover: #565758;
     --background-hover-t: #56575859;
-    --primary-pink: #F88C29;
+    --primary-pink: #D2738A;
     --primary-red: #E53935;
     --primary-blue: #1976D2;
     --primary-orange: #FF6F00;
@@ -43,7 +43,7 @@ body {
     letter-spacing: 2px;
     margin-top: 4px;
     margin-bottom: 4px;
-    background-image: url(public/img/misc/bg205.gif);
+    background-image: url(public/img/misc/bg_80.gif);
     /*background: #1d1f20; */
     color: #1d1f20;
 }
@@ -500,3 +500,4 @@ p.card-sub {
         position: relative;
     }
 }
+
