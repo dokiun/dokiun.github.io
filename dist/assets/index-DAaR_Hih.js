@@ -1,6 +1,7 @@
-(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))l(s);new MutationObserver(s=>{for(const i of s)if(i.type==="childList")for(const t of i.addedNodes)t.tagName==="LINK"&&t.rel==="modulepreload"&&l(t)}).observe(document,{childList:!0,subtree:!0});function o(s){const i={};return s.integrity&&(i.integrity=s.integrity),s.referrerPolicy&&(i.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?i.credentials="include":s.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function l(s){if(s.ep)return;s.ep=!0;const i=o(s);fetch(s.href,i)}})();const h="modulepreload",w=function(e){return"/"+e},p={},b=function(a,o,l){let s=Promise.resolve();if(o&&o.length>0){document.getElementsByTagName("link");const t=document.querySelector("meta[property=csp-nonce]"),r=(t==null?void 0:t.nonce)||(t==null?void 0:t.getAttribute("nonce"));s=Promise.allSettled(o.map(c=>{if(c=w(c),c in p)return;p[c]=!0;const n=c.endsWith(".css"),u=n?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${c}"]${u}`))return;const d=document.createElement("link");if(d.rel=n?"stylesheet":h,n||(d.as="script"),d.crossOrigin="",d.href=c,r&&d.setAttribute("nonce",r),document.head.appendChild(d),n)return new Promise((_,v)=>{d.addEventListener("load",_),d.addEventListener("error",()=>v(new Error(`Unable to preload CSS for ${c}`)))})}))}function i(t){const r=new Event("vite:preloadError",{cancelable:!0});if(r.payload=t,window.dispatchEvent(r),!r.defaultPrevented)throw t}return s.then(t=>{for(const r of t||[])r.status==="rejected"&&i(r.reason);return a().catch(i)})};function g(){const e=document.createElement("div");return e.innerHTML=`
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/model-viewer-DlHOFRIf.js","assets/three-3RCtsL8T.js","assets/three-loaders-CAQa4sI3.js"])))=>i.map(i=>d[i]);
+(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))r(s);new MutationObserver(s=>{for(const i of s)if(i.type==="childList")for(const o of i.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&r(o)}).observe(document,{childList:!0,subtree:!0});function t(s){const i={};return s.integrity&&(i.integrity=s.integrity),s.referrerPolicy&&(i.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?i.credentials="include":s.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function r(s){if(s.ep)return;s.ep=!0;const i=t(s);fetch(s.href,i)}})();const h="modulepreload",w=function(e){return"/"+e},p={},f=function(a,t,r){let s=Promise.resolve();if(t&&t.length>0){document.getElementsByTagName("link");const o=document.querySelector("meta[property=csp-nonce]"),c=(o==null?void 0:o.nonce)||(o==null?void 0:o.getAttribute("nonce"));s=Promise.allSettled(t.map(d=>{if(d=w(d),d in p)return;p[d]=!0;const n=d.endsWith(".css"),u=n?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${d}"]${u}`))return;const l=document.createElement("link");if(l.rel=n?"stylesheet":h,n||(l.as="script"),l.crossOrigin="",l.href=d,c&&l.setAttribute("nonce",c),document.head.appendChild(l),n)return new Promise((v,_)=>{l.addEventListener("load",v),l.addEventListener("error",()=>_(new Error(`Unable to preload CSS for ${d}`)))})}))}function i(o){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=o,window.dispatchEvent(c),!c.defaultPrevented)throw o}return s.then(o=>{for(const c of o||[])c.status==="rejected"&&i(c.reason);return a().catch(i)})};function g(){const e=document.createElement("div");return e.innerHTML=`
     <div class="caja">
-      <div class="title"><p>Pineda 2000:</p></div>
+      <div class="title"><p>Modelo 3D:</p></div>
       <div id="viewer3d" style="width: 100%; height: 500px;"></div>
     </div>
   
@@ -98,7 +99,22 @@
         <a class="link" href="#/blog">Click aquí</a> para el Debug.
       </div>
     </div>
-    `,e}g.afterRender=()=>{const e=document.getElementById("viewer3d");e&&b(()=>import("./model-viewer-ClFR6lzd.js"),[]).then(a=>{a.initModelViewer(e)})};function f(){const e=document.createElement("div");return e.innerHTML=`
+    `,e}g.afterRender=()=>{const e=document.getElementById("viewer3d");if(e){const a=new IntersectionObserver(t=>{t.forEach(r=>{r.isIntersecting&&(f(()=>import("./model-viewer-DlHOFRIf.js"),__vite__mapDeps([0,1,2])).then(s=>{s.initModelViewer(e)}).catch(s=>{console.error("Error al cargar el modelo 3D:",s),e.innerHTML=`
+                <div style="
+                  display: flex; 
+                  align-items: center; 
+                  justify-content: center; 
+                  height: 100%; 
+                  color: #666; 
+                  flex-direction: column;
+                  text-align: center;
+                  padding: 2rem;
+                ">
+                  <div style="font-size: 2rem; margin-bottom: 1rem;">🛠️</div>
+                  <div>PINEDA 2000</div>
+                  <div style="font-size: 0.8rem; margin-top: 0.5rem;">Modelo 3D no disponible</div>
+                </div>
+              `}),a.unobserve(r.target))})},{threshold:.1,rootMargin:"100px"});a.observe(e)}};function b(){const e=document.createElement("div");return e.innerHTML=`
       <!-- Spotify -->
 
 <div class="caja">
@@ -589,4 +605,4 @@
 </div>
 </div>
 <script src="scriptacordeon.js"><\/script>
-    `,e}const x={"/":g,"/about":f,"/blog":y,"/proyectos":k};function m(){const e=location.hash.slice(1)||"/",a=document.getElementById("app"),o=x[e];if(o){a.innerHTML="";const l=o();a.appendChild(l),typeof o.afterRender=="function"&&o.afterRender(),S()}else a.innerHTML="<h2>Página no encontrada</h2>"}function S(){const e=document.querySelectorAll("nav a[data-link]"),a=location.hash.slice(1)||"/";e.forEach(o=>{o.getAttribute("data-link")===a?o.classList.add("active"):o.classList.remove("active")})}function j(){const e=document.querySelector(".icon"),a=document.querySelector(".nav ul");e&&a&&e.addEventListener("click",()=>{a.classList.toggle("active")})}function A(){j()}window.addEventListener("hashchange",m);window.addEventListener("load",m);window.addEventListener("DOMContentLoaded",()=>{A()});
+    `,e}const x={"/":g,"/about":b,"/blog":y,"/proyectos":k};function m(){const e=location.hash.slice(1)||"/",a=document.getElementById("app"),t=x[e];if(t){a.innerHTML="";const r=t();a.appendChild(r),typeof t.afterRender=="function"&&t.afterRender(),S()}else a.innerHTML="<h2>Página no encontrada</h2>"}function S(){const e=document.querySelectorAll("nav a[data-link]"),a=location.hash.slice(1)||"/";e.forEach(t=>{t.getAttribute("data-link")===a?t.classList.add("active"):t.classList.remove("active")})}function E(){const e=document.querySelector(".icon"),a=document.querySelector(".nav ul");e&&a&&e.addEventListener("click",()=>{a.classList.toggle("active")})}function j(){E()}window.addEventListener("hashchange",m);window.addEventListener("load",m);window.addEventListener("DOMContentLoaded",()=>{j(),"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js").then(e=>{console.log("🔧 Service Worker registrado:",e.scope)}).catch(e=>{console.log("❌ Error al registrar Service Worker:",e)})})});
