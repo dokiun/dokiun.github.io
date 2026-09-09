@@ -1,14 +1,14 @@
 [
   {
-    "id": "Ensamble",
-    "label": "Ensamble",
-    "obj": "Ensamble.obj",
-    "mtl": "Ensamble.mtl"
-  },
-  {
     "id": "Lanzador",
     "label": "Lanzador",
     "obj": "Lanzador.obj",
     "mtl": "Lanzador.mtl"
+  },
+  {
+    "id": "Pineda2000",
+    "label": "Pineda2000",
+    "obj": "Pineda2000.obj",
+    "mtl": "Pineda2000.mtl"
   }
 ]
