@@ -2,7 +2,12 @@ function HomePage() {
     const div = document.createElement('div');
     div.innerHTML = `
     <div class="caja">
-      <div class="title"><p>Modelo 3D:</p></div>
+      <div class="title">
+        <label for="model-selector">Modelo 3D:</label>
+        <select id="model-selector" class="model-selector">
+          <option value="">Cargando modelos...</option>
+        </select>
+      </div>
       <div id="viewer3d" style="width: 100%; height: 500px;"></div>
     </div>
   
@@ -108,14 +113,48 @@ function HomePage() {
 
   HomePage.afterRender = () => {
     const container = document.getElementById('viewer3d');
+    const selector = document.getElementById('model-selector');
     if (container) {
+      let models = [];
+      let viewerModule;
+      let destroyViewer;
+
+      const renderSelectedModel = () => {
+        if (!viewerModule) return;
+        if (destroyViewer) destroyViewer();
+        const selectedModel = models.find(model => model.id === selector.value);
+        if (selectedModel) {
+          destroyViewer = viewerModule.initModelViewer(container, selectedModel);
+        }
+      };
+
+      selector.addEventListener('change', renderSelectedModel);
+
+      const loadModelCatalog = fetch('/models/models.json')
+        .then(response => {
+          if (!response.ok) throw new Error('No se pudo cargar el catálogo de modelos');
+          return response.json();
+        })
+        .then(catalog => {
+          models = catalog;
+          selector.replaceChildren(...models.map(model => {
+            const option = document.createElement('option');
+            option.value = model.id;
+            option.textContent = model.label;
+            return option;
+          }));
+          selector.disabled = models.length === 0;
+          if (models.length === 0) throw new Error('No hay pares OBJ y MTL disponibles');
+        });
+
       // Verificar si el elemento está visible antes de cargar el modelo
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             // Solo cargar cuando el contenedor sea visible
-            import('/script/model-viewer.js').then(module => {
-              module.initModelViewer(container);
+            Promise.all([import('/script/model-viewer.js'), loadModelCatalog]).then(([module]) => {
+              viewerModule = module;
+              renderSelectedModel();
             }).catch(error => {
               console.error('Error al cargar el modelo 3D:', error);
               // Mostrar un fallback en caso de error

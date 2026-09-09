@@ -1,9 +1,6 @@
 // Service Worker para cachear modelos 3D
-const CACHE_NAME = 'pineda-2000-v1';
-const MODELS_TO_CACHE = [
-  '/models/Ensamble.obj',
-  '/models/Ensamble.mtl'
-];
+const CACHE_NAME = 'pineda-2000-v3';
+const MODEL_CATALOG = '/models/models.json';
 
 // Instalar service worker
 self.addEventListener('install', (event) => {
@@ -13,8 +10,15 @@ self.addEventListener('install', (event) => {
     caches.open(CACHE_NAME)
       .then((cache) => {
         console.log('📦 Service Worker: Cacheando modelos 3D...');
-        // Pre-cachear modelos críticos
-        return cache.addAll(MODELS_TO_CACHE);
+        return fetch(MODEL_CATALOG)
+          .then((response) => response.json())
+          .then((models) => cache.addAll([
+            MODEL_CATALOG,
+            ...models.flatMap((model) => [
+              `/models/${model.obj}`,
+              `/models/${model.mtl}`
+            ])
+          ]));
       })
       .catch((error) => {
         console.error('❌ Error al cachear modelos:', error);
@@ -49,10 +53,27 @@ self.addEventListener('activate', (event) => {
 // Interceptar requests
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
+
+  // El catálogo debe actualizarse cuando se agregan nuevos modelos.
+  if (url.pathname.endsWith('/models.json')) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          const responseToCache = response.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseToCache);
+          });
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
   
   // Solo cachear modelos 3D
   if (url.pathname.includes('/models/') && 
-      (url.pathname.endsWith('.obj') || url.pathname.endsWith('.mtl'))) {
+      (url.pathname.endsWith('.obj') || url.pathname.endsWith('.mtl') ||
+       url.pathname.endsWith('/models.json'))) {
     
     event.respondWith(
       caches.match(event.request)
