@@ -2,7 +2,7 @@ function HomePage() {
     const div = document.createElement('div');
     div.innerHTML = `
     <div class="caja">
-      <div class="title"><p>Pineda 2000:</p></div>
+      <div class="title"><p>Modelo 3D:</p></div>
       <div id="viewer3d" style="width: 100%; height: 500px;"></div>
     </div>
   
@@ -109,9 +109,42 @@ function HomePage() {
   HomePage.afterRender = () => {
     const container = document.getElementById('viewer3d');
     if (container) {
-      import('/script/model-viewer.js').then(module => {
-        module.initModelViewer(container);
+      // Verificar si el elemento está visible antes de cargar el modelo
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Solo cargar cuando el contenedor sea visible
+            import('/script/model-viewer.js').then(module => {
+              module.initModelViewer(container);
+            }).catch(error => {
+              console.error('Error al cargar el modelo 3D:', error);
+              // Mostrar un fallback en caso de error
+              container.innerHTML = `
+                <div style="
+                  display: flex; 
+                  align-items: center; 
+                  justify-content: center; 
+                  height: 100%; 
+                  color: #666; 
+                  flex-direction: column;
+                  text-align: center;
+                  padding: 2rem;
+                ">
+                  <div style="font-size: 2rem; margin-bottom: 1rem;">🛠️</div>
+                  <div>PINEDA 2000</div>
+                  <div style="font-size: 0.8rem; margin-top: 0.5rem;">Modelo 3D no disponible</div>
+                </div>
+              `;
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '100px' // Cargar cuando esté 100px antes de ser visible
       });
+      
+      observer.observe(container);
     }
   };
   
