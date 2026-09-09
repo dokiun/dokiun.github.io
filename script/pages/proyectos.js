@@ -1,8 +1,8 @@
+import { initAccordions } from '../acordeon.js';
+
 export default function ProyectosPage() {
     const div = document.createElement('div');
     div.innerHTML = `
-      <script src="script\menu-desp.js"></script>
-
 <div class="caja">
 <div class="faq-container">
     <details> <!-- Análisis de datos CyT -->
@@ -94,8 +94,10 @@ export default function ProyectosPage() {
   </details>
 </div>
 </div>
-<script src="script\acordeon.js"></script>
     `;
+
+  ProyectosPage.afterRender = () => initAccordions(div);
+
     return div;
   }
   

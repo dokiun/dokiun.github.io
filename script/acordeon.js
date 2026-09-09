@@ -97,6 +97,13 @@ class Accordion {
     }
 }
 
-document.querySelectorAll("details").forEach((el) => {
-    new Accordion(el);
-});
+export function initAccordions(root = document) {
+    root.querySelectorAll("details").forEach((el) => {
+        if (el.dataset.accordionInitialized) return;
+
+        new Accordion(el);
+        el.dataset.accordionInitialized = "true";
+    });
+}
+
+initAccordions();

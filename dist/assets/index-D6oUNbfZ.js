@@ -1,125 +1,23 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/model-viewer-I8rNK5I3.js","assets/three-3RCtsL8T.js","assets/three-loaders-CAQa4sI3.js"])))=>i.map(i=>d[i]);
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))d(s);new MutationObserver(s=>{for(const i of s)if(i.type==="childList")for(const r of i.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&d(r)}).observe(document,{childList:!0,subtree:!0});function a(s){const i={};return s.integrity&&(i.integrity=s.integrity),s.referrerPolicy&&(i.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?i.credentials="include":s.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function d(s){if(s.ep)return;s.ep=!0;const i=a(s);fetch(s.href,i)}})();const h="modulepreload",w=function(e){return"/"+e},g={},f=function(t,a,d){let s=Promise.resolve();if(a&&a.length>0){document.getElementsByTagName("link");const r=document.querySelector("meta[property=csp-nonce]"),c=(r==null?void 0:r.nonce)||(r==null?void 0:r.getAttribute("nonce"));s=Promise.allSettled(a.map(o=>{if(o=w(o),o in g)return;g[o]=!0;const l=o.endsWith(".css"),n=l?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${o}"]${n}`))return;const p=document.createElement("link");if(p.rel=l?"stylesheet":h,l||(p.as="script"),p.crossOrigin="",p.href=o,c&&p.setAttribute("nonce",c),document.head.appendChild(p),l)return new Promise((v,_)=>{p.addEventListener("load",v),p.addEventListener("error",()=>_(new Error(`Unable to preload CSS for ${o}`)))})}))}function i(r){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=r,window.dispatchEvent(c),!c.defaultPrevented)throw r}return s.then(r=>{for(const c of r||[])c.status==="rejected"&&i(c.reason);return t().catch(i)})};function m(){const e=document.createElement("div");return e.innerHTML=`
-    <div class="caja">
-      <div class="title">
-        <label for="model-selector">Modelo 3D:</label>
-        <select id="model-selector" class="model-selector">
-          <option value="">Cargando modelos...</option>
-        </select>
-      </div>
-      <div id="viewer3d" style="width: 100%; height: 500px;"></div>
-    </div>
-  
-    <p>&nbsp;</p>
-    <div class="resistencia-container">
-      <div class="cable"></div>
-      <hr class="resistencia">
-      <div class="cable"></div>
-    </div>
-    <p>&nbsp;</p>
-  
-    <div class="caja">
-      <div class="title">Sobre mí:</div>
-      <div class="text">
-        <p>Bachiller Técnico Mecatrónico y Estudiante de Ingeniería Mecánica con formación en diversas áreas de diseño y/o selección de elementos de máquinas, selección de materiales, sistemas neumáticos e hidráulicos y elementos de automatización...</p>
-        <p>&nbsp;</p>
-        <p>Para conocer los proyectos en los que estoy trabajando y he trabajado visita la página "Proyectos" o haz <a class="link" href="#/proyectos">click aquí</a>.</p>
-      </div>
-    </div>
-  
-    <p>&nbsp;</p>
-    <div class="resistencia-container">
-      <div class="cable"></div>
-      <hr class="resistencia">
-      <div class="cable"></div>
-    </div>
-    <p>&nbsp;</p>
-  
-    <div class="caja">
-      <div class="title"><p>Formación:</p></div>
-      <p>&nbsp;</p>
-      <div class="cards">
-        <div class="card">
-          <img src="img/svg/oea_logo.svg" class="card-img" alt="Logo OEA">
-          <div class="card-body">
-            <h1 class="card-title">Técnico Mecatrónico</h1>
-            <p class="card-sub">Colegio OEA</p>
-            <p class="card-sub">2018-2019</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="img/svg/unal_logo.svg" class="card-img" alt="Logo UNAL">
-          <div class="card-body">
-            <h1 class="card-title">Ingeniería Mecánica</h1>
-            <p class="card-sub">Universidad Nacional de Colombia</p>
-            <p class="card-sub">2020-Actualidad</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="img/svg/sena_logo.svg" class="card-img" alt="Logo SENA">
-          <div class="card-body">
-            <h1 class="card-title">SENA</h1>
-            <p class="card-sub">- Autocad 2D</p>
-            <p class="card-sub">- Elementos de máquinas</p>
-            <p class="card-sub">- Introd. a Sistemas de Automatización</p>
-          </div>
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))i(a);new MutationObserver(a=>{for(const o of a)if(o.type==="childList")for(const n of o.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&i(n)}).observe(document,{childList:!0,subtree:!0});function s(a){const o={};return a.integrity&&(o.integrity=a.integrity),a.referrerPolicy&&(o.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?o.credentials="include":a.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function i(a){if(a.ep)return;a.ep=!0;const o=s(a);fetch(a.href,o)}})();class y{constructor(t){this.el=t,this.summary=t.querySelector("summary"),this.content=t.querySelector(".faq-content"),this.expandIcon=this.summary.querySelector(".expand-icon"),this.animation=null,this.isClosing=!1,this.isExpanding=!1,this.summary.addEventListener("click",s=>this.onClick(s))}onClick(t){t.preventDefault(),this.el.style.overflow="hidden",this.isClosing||!this.el.open?this.open():(this.isExpanding||this.el.open)&&this.shrink()}shrink(){this.isClosing=!0;const t=`${this.el.offsetHeight}px`,s=`${this.summary.offsetHeight}px`;this.animation&&this.animation.cancel(),this.animation=this.el.animate({height:[t,s]},{duration:200,easing:"ease-out"}),this.animation.onfinish=()=>(this.expandIcon.setAttribute("src","assets/plus.svg"),this.onAnimationFinish(!1)),this.animation.oncancel=()=>(this.expandIcon.setAttribute("src","assets/plus.svg"),this.isClosing=!1)}open(){this.el.style.height=`${this.el.offsetHeight}px`,this.el.open=!0,window.requestAnimationFrame(()=>this.expand())}expand(){this.isExpanding=!0;const t=`${this.el.offsetHeight}px`,s=`${this.summary.offsetHeight+this.content.offsetHeight}px`;this.animation&&this.animation.cancel(),this.animation=this.el.animate({height:[t,s]},{duration:200,easing:"ease-out"}),this.animation.onfinish=()=>(this.expandIcon.setAttribute("src","assets/minus.svg"),this.onAnimationFinish(!0)),this.animation.oncancel=()=>(this.expandIcon.setAttribute("src","assets/minus.svg"),this.isExpanding=!1)}onAnimationFinish(t){this.el.open=t,this.animation=null,this.isClosing=!1,this.isExpanding=!1,this.el.style.height=this.el.style.overflow=""}}function g(e=document){e.querySelectorAll("details").forEach(t=>{t.dataset.accordionInitialized||(new y(t),t.dataset.accordionInitialized="true")})}g();function u(){const e=document.createElement("div");return e.innerHTML=`
+      <div class="caja">
+        <div class="faq-container">
+          <details>
+            <summary>
+              <span class="faq-title">IA - Mini Robots</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="expand-icon" width="24" height="24" viewBox="0 0 24 24"
+                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M9 6l6 6l-6 6"></path>
+              </svg>
+            </summary>
+            <div class="faq-content">
+              <p>Texto de muestra para la página de IA y Mini Robots.</p>
+            </div>
+          </details>
         </div>
       </div>
-    </div>
-  
-    <p>&nbsp;</p>
-    <div class="resistencia-container">
-      <div class="cable"></div>
-      <hr class="resistencia">
-      <div class="cable"></div>
-    </div>
-    <p>&nbsp;</p>
-  
-    <div class="caja">
-      <p><img src="img/blog/20221010_180327.jpg" alt="Lain Iwakura on wired" width="100%" height="100%"></p>
-      <div class="text">
-        <a class="link" href="https://maps.app.goo.gl/gbc1xEZzsX6yznfx9" target="_blank">Click aquí</a> para conocer las coordenadas de esta foto.
-      </div>
-    </div>
-  
-    <p>&nbsp;</p>
-    <div class="resistencia-container">
-      <div class="cable"></div>
-      <hr class="resistencia">
-      <div class="cable"></div>
-    </div>
-    <p>&nbsp;</p>
-  
-    <div class="caja">
-      <div class="text">
-        <p>- Aprendiendo desarrollo web básico.</p>
-        <p>- Aprendiendo análisis de datos.</p>
-        <p>- Aprendiendo Matlab.</p>
-        <p>- Aprendiendo Python.</p>
-      </div>
-      <div class="text">
-        <a class="link" href="#/about">Click aquí</a> para conocer un poco más sobre mí.
-      </div>
-      <div class="text">
-        <a class="link" href="#/blog">Click aquí</a> para el Debug.
-      </div>
-    </div>
-    `,e}m.afterRender=()=>{const e=document.getElementById("viewer3d"),t=document.getElementById("model-selector");if(e){let a=[],d,s;const i=()=>{if(!d)return;s&&s();const o=a.find(l=>l.id===t.value);o&&(s=d.initModelViewer(e,o))};t.addEventListener("change",i);const r=fetch("/models/models.json").then(o=>{if(!o.ok)throw new Error("No se pudo cargar el catálogo de modelos");return o.json()}).then(o=>{if(a=o,t.replaceChildren(...a.map(l=>{const n=document.createElement("option");return n.value=l.id,n.textContent=l.label,n})),t.disabled=a.length===0,a.length===0)throw new Error("No hay pares OBJ y MTL disponibles")}),c=new IntersectionObserver(o=>{o.forEach(l=>{l.isIntersecting&&(Promise.all([f(()=>import("./model-viewer-I8rNK5I3.js"),__vite__mapDeps([0,1,2])),r]).then(([n])=>{d=n,i()}).catch(n=>{console.error("Error al cargar el modelo 3D:",n),e.innerHTML=`
-                <div style="
-                  display: flex; 
-                  align-items: center; 
-                  justify-content: center; 
-                  height: 100%; 
-                  color: #666; 
-                  flex-direction: column;
-                  text-align: center;
-                  padding: 2rem;
-                ">
-                  <div style="font-size: 2rem; margin-bottom: 1rem;">🛠️</div>
-                  <div>PINEDA 2000</div>
-                  <div style="font-size: 0.8rem; margin-top: 0.5rem;">Modelo 3D no disponible</div>
-                </div>
-              `}),c.unobserve(l.target))})},{threshold:.1,rootMargin:"100px"});c.observe(e)}};function b(){const e=document.createElement("div");return e.innerHTML=`
+    `,u.afterRender=()=>g(e),e}function k(){const e=document.createElement("div");return e.innerHTML=`
       <!-- Spotify -->
 
 <div class="caja">
@@ -432,7 +330,7 @@ const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/model-viewer-I8
 <p>&nbsp;</p>
 
 </div>
-    `,e}function y(){const e=document.createElement("div");return e.innerHTML=`
+    `,e}function x(){const e=document.createElement("div");return e.innerHTML=`
       <div class="caja"> <!-- Aviso de construccion -->
     <div class="pretitle" style="text-align: center;">
         <p>| Sitio en construcción |</p>
@@ -515,9 +413,127 @@ const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/model-viewer-I8
         <p>- Formateo de código más legible.</p>
     </div>
 </div>
-    `,e}function k(){const e=document.createElement("div");return e.innerHTML=`
-      <script src="scriptmenu-desp.js"><\/script>
-
+    `,e}const E="modulepreload",A=function(e){return"/"+e},m={},j=function(t,s,i){let a=Promise.resolve();if(s&&s.length>0){document.getElementsByTagName("link");const n=document.querySelector("meta[property=csp-nonce]"),c=(n==null?void 0:n.nonce)||(n==null?void 0:n.getAttribute("nonce"));a=Promise.allSettled(s.map(r=>{if(r=A(r),r in m)return;m[r]=!0;const l=r.endsWith(".css"),d=l?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${r}"]${d}`))return;const p=document.createElement("link");if(p.rel=l?"stylesheet":E,l||(p.as="script"),p.crossOrigin="",p.href=r,c&&p.setAttribute("nonce",c),document.head.appendChild(p),l)return new Promise((f,b)=>{p.addEventListener("load",f),p.addEventListener("error",()=>b(new Error(`Unable to preload CSS for ${r}`)))})}))}function o(n){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=n,window.dispatchEvent(c),!c.defaultPrevented)throw n}return a.then(n=>{for(const c of n||[])c.status==="rejected"&&o(c.reason);return t().catch(o)})};function h(){const e=document.createElement("div");return e.innerHTML=`
+    <div class="caja">
+      <div class="title">
+        <label for="model-selector">Modelo 3D:</label>
+        <select id="model-selector" class="model-selector">
+          <option value="">Cargando modelos...</option>
+        </select>
+      </div>
+      <div id="viewer3d" style="width: 100%; height: 500px;"></div>
+    </div>
+  
+    <p>&nbsp;</p>
+    <div class="resistencia-container">
+      <div class="cable"></div>
+      <hr class="resistencia">
+      <div class="cable"></div>
+    </div>
+    <p>&nbsp;</p>
+  
+    <div class="caja">
+      <div class="title">Sobre mí:</div>
+      <div class="text">
+        <p>Bachiller Técnico Mecatrónico y Estudiante de Ingeniería Mecánica con formación en diversas áreas de diseño y/o selección de elementos de máquinas, selección de materiales, sistemas neumáticos e hidráulicos y elementos de automatización...</p>
+        <p>&nbsp;</p>
+        <p>Para conocer los proyectos en los que estoy trabajando y he trabajado visita la página "Proyectos" o haz <a class="link" href="#/proyectos">click aquí</a>.</p>
+      </div>
+    </div>
+  
+    <p>&nbsp;</p>
+    <div class="resistencia-container">
+      <div class="cable"></div>
+      <hr class="resistencia">
+      <div class="cable"></div>
+    </div>
+    <p>&nbsp;</p>
+  
+    <div class="caja">
+      <div class="title"><p>Formación:</p></div>
+      <p>&nbsp;</p>
+      <div class="cards">
+        <div class="card">
+          <img src="img/svg/oea_logo.svg" class="card-img" alt="Logo OEA">
+          <div class="card-body">
+            <h1 class="card-title">Técnico Mecatrónico</h1>
+            <p class="card-sub">Colegio OEA</p>
+            <p class="card-sub">2018-2019</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img/svg/unal_logo.svg" class="card-img" alt="Logo UNAL">
+          <div class="card-body">
+            <h1 class="card-title">Ingeniería Mecánica</h1>
+            <p class="card-sub">Universidad Nacional de Colombia</p>
+            <p class="card-sub">2020-Actualidad</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img/svg/sena_logo.svg" class="card-img" alt="Logo SENA">
+          <div class="card-body">
+            <h1 class="card-title">SENA</h1>
+            <p class="card-sub">- Autocad 2D</p>
+            <p class="card-sub">- Elementos de máquinas</p>
+            <p class="card-sub">- Introd. a Sistemas de Automatización</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <p>&nbsp;</p>
+    <div class="resistencia-container">
+      <div class="cable"></div>
+      <hr class="resistencia">
+      <div class="cable"></div>
+    </div>
+    <p>&nbsp;</p>
+  
+    <div class="caja">
+      <p><img src="img/blog/20221010_180327.jpg" alt="Lain Iwakura on wired" width="100%" height="100%"></p>
+      <div class="text">
+        <a class="link" href="https://maps.app.goo.gl/gbc1xEZzsX6yznfx9" target="_blank">Click aquí</a> para conocer las coordenadas de esta foto.
+      </div>
+    </div>
+  
+    <p>&nbsp;</p>
+    <div class="resistencia-container">
+      <div class="cable"></div>
+      <hr class="resistencia">
+      <div class="cable"></div>
+    </div>
+    <p>&nbsp;</p>
+  
+    <div class="caja">
+      <div class="text">
+        <p>- Aprendiendo desarrollo web básico.</p>
+        <p>- Aprendiendo análisis de datos.</p>
+        <p>- Aprendiendo Matlab.</p>
+        <p>- Aprendiendo Python.</p>
+      </div>
+      <div class="text">
+        <a class="link" href="#/about">Click aquí</a> para conocer un poco más sobre mí.
+      </div>
+      <div class="text">
+        <a class="link" href="#/blog">Click aquí</a> para el Debug.
+      </div>
+    </div>
+    `,e}h.afterRender=()=>{const e=document.getElementById("viewer3d"),t=document.getElementById("model-selector");if(e){let s=[],i,a;const o=()=>{if(!i)return;a&&a();const r=s.find(l=>l.id===t.value);r&&(a=i.initModelViewer(e,r))};t.addEventListener("change",o);const n=fetch("/models/models.json").then(r=>{if(!r.ok)throw new Error("No se pudo cargar el catálogo de modelos");return r.json()}).then(r=>{if(s=r,t.replaceChildren(...s.map(l=>{const d=document.createElement("option");return d.value=l.id,d.textContent=l.label,d})),t.disabled=s.length===0,s.length===0)throw new Error("No hay pares OBJ y MTL disponibles")}),c=new IntersectionObserver(r=>{r.forEach(l=>{l.isIntersecting&&(Promise.all([j(()=>import("./model-viewer-I8rNK5I3.js"),__vite__mapDeps([0,1,2])),n]).then(([d])=>{i=d,o()}).catch(d=>{console.error("Error al cargar el modelo 3D:",d),e.innerHTML=`
+                <div style="
+                  display: flex; 
+                  align-items: center; 
+                  justify-content: center; 
+                  height: 100%; 
+                  color: #666; 
+                  flex-direction: column;
+                  text-align: center;
+                  padding: 2rem;
+                ">
+                  <div style="font-size: 2rem; margin-bottom: 1rem;">🛠️</div>
+                  <div>PINEDA 2000</div>
+                  <div style="font-size: 0.8rem; margin-top: 0.5rem;">Modelo 3D no disponible</div>
+                </div>
+              `}),c.unobserve(l.target))})},{threshold:.1,rootMargin:"100px"});c.observe(e)}};function v(){const e=document.createElement("div");return e.innerHTML=`
 <div class="caja">
 <div class="faq-container">
     <details> <!-- Análisis de datos CyT -->
@@ -609,5 +625,4 @@ const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/model-viewer-I8
   </details>
 </div>
 </div>
-<script src="scriptacordeon.js"><\/script>
-    `,e}const x={"/":m,"/about":b,"/blog":y,"/proyectos":k};function u(){const e=location.hash.slice(1)||"/",t=document.getElementById("app"),a=x[e];if(a){t.innerHTML="";const d=a();t.appendChild(d),typeof a.afterRender=="function"&&a.afterRender(),E()}else t.innerHTML="<h2>Página no encontrada</h2>"}function E(){const e=document.querySelectorAll("nav a[data-link]"),t=location.hash.slice(1)||"/";e.forEach(a=>{a.getAttribute("data-link")===t?a.classList.add("active"):a.classList.remove("active")})}function S(){const e=document.querySelector(".icon"),t=document.querySelector(".nav ul");e&&t&&e.addEventListener("click",()=>{t.classList.toggle("active")})}function j(){S()}window.addEventListener("hashchange",u);window.addEventListener("load",u);window.addEventListener("DOMContentLoaded",()=>{j(),"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js").then(e=>{console.log("🔧 Service Worker registrado:",e.scope)}).catch(e=>{console.log("❌ Error al registrar Service Worker:",e)})})});
+    `,v.afterRender=()=>g(e),e}const S=Object.assign({"./pages/IA-y-MiniRobots.js":u,"./pages/about.js":k,"./pages/blog.js":x,"./pages/home.js":h,"./pages/proyectos.js":v}),_=Object.fromEntries(Object.entries(S).map(([e,t])=>{const s=e.split("/").pop().replace(".js","");return[s==="home"?"/":`/${s}`,t]}));function M(e){return e==="/"?"Inicio":e.slice(1).replace(/[-_]+/g," ").replace(/\b\w/g,t=>t.toUpperCase())}function C(){const e=document.querySelectorAll("[data-navigation]"),t=Object.keys(_).sort((s,i)=>s==="/"?-1:i==="/"?1:s.localeCompare(i));e.forEach(s=>{s.replaceChildren(...t.map(i=>{const a=document.createElement("li"),o=document.createElement("a");return o.href=`#${i}`,o.dataset.link=i,o.textContent=M(i),a.appendChild(o),a}))})}function w(){const e=location.hash.slice(1)||"/",t=document.getElementById("app"),s=_[e];if(s){t.innerHTML="";const i=s();t.appendChild(i),typeof s.afterRender=="function"&&s.afterRender(),C(),L()}else t.innerHTML="<h2>Página no encontrada</h2>"}function L(){const e=document.querySelectorAll("nav a[data-link]"),t=location.hash.slice(1)||"/";e.forEach(s=>{s.getAttribute("data-link")===t?s.classList.add("active"):s.classList.remove("active")})}function q(){const e=document.querySelector(".main-item"),t=document.querySelector(".accordion-container > ul");if(e&&t){e.setAttribute("role","button"),e.setAttribute("tabindex","0"),e.setAttribute("aria-expanded","false");const s=()=>{const i=e.classList.toggle("main-item--open");e.setAttribute("aria-expanded",String(i))};e.addEventListener("click",()=>{s()}),e.addEventListener("keydown",i=>{(i.key==="Enter"||i.key===" ")&&(i.preventDefault(),s())})}}function z(){q()}window.addEventListener("hashchange",w);window.addEventListener("load",w);window.addEventListener("DOMContentLoaded",()=>{z(),"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js").then(e=>{console.log("🔧 Service Worker registrado:",e.scope)}).catch(e=>{console.log("❌ Error al registrar Service Worker:",e)})})});

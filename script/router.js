@@ -1,14 +1,48 @@
-import home from './pages/home.js';
-import about from './pages/about.js';
-import blog from './pages/blog.js';
-import proyectos from './pages/proyectos.js';
+const pageModules = import.meta.glob('./pages/*.js', {
+    eager: true,
+    import: 'default'
+});
 
-const routes = {
-    '/': home,
-    '/about': about,
-    '/blog': blog,
-    '/proyectos': proyectos,
-};
+const routes = Object.fromEntries(
+    Object.entries(pageModules).map(([filePath, page]) => {
+        const fileName = filePath.split('/').pop().replace('.js', '');
+        const route = fileName === 'home' ? '/' : `/${fileName}`;
+
+        return [route, page];
+    })
+);
+
+function getPageLabel(route) {
+    if (route === '/') return 'Inicio';
+
+    return route
+        .slice(1)
+        .replace(/[-_]+/g, ' ')
+        .replace(/\b\w/g, letter => letter.toUpperCase());
+}
+
+function renderNavigation() {
+    const navigationLists = document.querySelectorAll('[data-navigation]');
+    const pageRoutes = Object.keys(routes).sort((firstRoute, secondRoute) => {
+        if (firstRoute === '/') return -1;
+        if (secondRoute === '/') return 1;
+        return firstRoute.localeCompare(secondRoute);
+    });
+
+    navigationLists.forEach(navigation => {
+        navigation.replaceChildren(...pageRoutes.map(route => {
+            const item = document.createElement('li');
+            const link = document.createElement('a');
+
+            link.href = `#${route}`;
+            link.dataset.link = route;
+            link.textContent = getPageLabel(route);
+            item.appendChild(link);
+
+            return item;
+        }));
+    });
+}
 
 export function router() {
     const path = location.hash.slice(1) || '/';
@@ -23,6 +57,7 @@ export function router() {
         if (typeof page.afterRender === 'function') {
             page.afterRender(); // ← aquí va tu lógica post-render
         }
+        renderNavigation();
         updateActiveNav();
     } else {
         app.innerHTML = '<h2>Página no encontrada</h2>';
