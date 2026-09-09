@@ -6,9 +6,9 @@
     "mtl": "Ensamble.mtl"
   },
   {
-    "id": "Resorte_Mateo",
-    "label": "Resorte Mateo",
-    "obj": "Resorte_Mateo.obj",
-    "mtl": "Resorte_Mateo.mtl"
+    "id": "Lanzador",
+    "label": "Lanzador",
+    "obj": "Lanzador.obj",
+    "mtl": "Lanzador.mtl"
   }
 ]
