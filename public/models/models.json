@@ -1,5 +1,11 @@
 [
   {
+    "id": "Conector",
+    "label": "Conector",
+    "obj": "Conector.obj",
+    "mtl": "Conector.mtl"
+  },
+  {
     "id": "Lanzador",
     "label": "Lanzador",
     "obj": "Lanzador.obj",

@@ -269,7 +269,10 @@ footer ul li a {
     color: var(--primary-pink);
     border-radius: 8px 8px 0px 0px;
     background-color: var(--background-hover-t);
-    background-image: url(img/misc/drip_u.gif);
+    background-image: url('/img/misc/drip_u.gif');
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: 256px 256px;
     transition: all 200ms;
 }
 
@@ -289,7 +292,10 @@ footer ul li a {
 
 .accordion-container>ul {
     max-height: 200px;
-    background-image: url(img/misc/drip_u.gif);
+    background-image: url('/img/misc/drip_u.gif');
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: 256px 256px;
     list-style-type: none;
     opacity: 0;
     display: none;

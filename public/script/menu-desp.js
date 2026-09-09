@@ -22,5 +22,20 @@ export function setupMenuToggle() {
                 toggleMenu();
             }
         });
+
+        menu.addEventListener('click', (event) => {
+            if (event.target.closest('a')) {
+                closeMobileMenu();
+            }
+        });
+    }
+}
+
+export function closeMobileMenu() {
+    const menuButton = document.querySelector('.main-item');
+
+    if (menuButton) {
+        menuButton.classList.remove('main-item--open');
+        menuButton.setAttribute('aria-expanded', 'false');
     }
 }

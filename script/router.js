@@ -1,3 +1,5 @@
+import { closeMobileMenu } from '../public/script/menu-desp.js';
+
 const pageModules = import.meta.glob('./pages/*.js', {
     eager: true,
     import: 'default'
@@ -59,6 +61,7 @@ export function router() {
         }
         renderNavigation();
         updateActiveNav();
+        closeMobileMenu();
     } else {
         app.innerHTML = '<h2>Página no encontrada</h2>';
     }
