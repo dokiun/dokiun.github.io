@@ -46,7 +46,11 @@ function renderNavigation() {
     });
 }
 
+let cleanupPage;
+
 export function router() {
+    if (typeof cleanupPage === 'function') cleanupPage();
+    cleanupPage = undefined;
     const path = location.hash.slice(1) || '/';
     const app = document.getElementById('app');
     const page = routes[path];
@@ -57,7 +61,7 @@ export function router() {
         app.appendChild(content);
 
         if (typeof page.afterRender === 'function') {
-            page.afterRender(); // ← aquí va tu lógica post-render
+            cleanupPage = page.afterRender();
         }
         renderNavigation();
         updateActiveNav();
