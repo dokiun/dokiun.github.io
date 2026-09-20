@@ -9,19 +9,12 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        console.log('📦 Service Worker: Cacheando modelos 3D...');
-        return fetch(MODEL_CATALOG)
-          .then((response) => response.json())
-          .then((models) => cache.addAll([
-            MODEL_CATALOG,
-            ...models.flatMap((model) => [
-              `/models/${model.obj}`,
-              `/models/${model.mtl}`
-            ])
-          ]));
+        // Los OBJ y MTL se guardan únicamente cuando el visor los solicita.
+        // Mantener la caché existente evita volver a descargar modelos ya vistos.
+        return cache.add(MODEL_CATALOG);
       })
       .catch((error) => {
-        console.error('❌ Error al cachear modelos:', error);
+        console.error('❌ Error al cachear el catálogo:', error);
       })
   );
   

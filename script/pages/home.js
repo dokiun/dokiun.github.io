@@ -145,6 +145,7 @@ function HomePage() {
           }));
           selector.disabled = models.length === 0;
           if (models.length === 0) throw new Error('No hay pares OBJ y MTL disponibles');
+          selector.value = (models.find(model => model.id === 'Lanzador') || models[0]).id;
         });
 
       // Verificar si el elemento está visible antes de cargar el modelo
